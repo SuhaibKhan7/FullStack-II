@@ -30,14 +30,17 @@ function App() {
       age: 21,
     },
   ]
-  let [showCard, setShowCard] = useState(true); 
- 
+  let [showCard, setShowCard] = useState(true);
+  // function toggleStudentCard() {
+  
+  //   setShowCard(!showCard);
+  // }
   return (
     <>
       <Header />
-      <button >Show/hide</button>
+      <button onClick={()=>setShowCard(!showCard)} style={{ width: '100px' }}  >Show/hide</button>
       {showCard && <StudentCard studentdata={studentdata} />}
-      <Footer/>
+      <Footer />
     </>
   )
 }

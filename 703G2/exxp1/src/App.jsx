@@ -27,13 +27,10 @@ function App() {
   function toggleStudentCard() {
     setShowCard(!showCard);
   }
-
-
-
   return (
     <>
       <Header />
-      <button onClick={toggleStudentCard} >
+      <button onClick={toggleStudentCard}  style={{ margin: "20px", padding: "10px", fontSize: "16px" ,width:"200px" }}>
         Show/Hide
       </button>
       {showCard && <StudentCard studentdata={studentdata} />}

@@ -1,12 +1,10 @@
 import React from 'react'
 
 function StudentCard({ studentdata }) {
-
-    return (
-        <div>
-            <p>hi,,,,</p>
-        </div>
-    )
+    console.log(studentdata)
+  return (
+    <div>StudentCarddfdsfasfasdf</div>
+  )
 }
 
 export default StudentCard

@@ -28,14 +28,18 @@ function App() {
       grade: 'C',
     },
   ]
- 
-
-
+  const [show, setShow] = useState(true)
+   
+  // function toggleCard(x) {
+  //   console.log(x);
+  //   setShow(!show);
+  // }
 
   return (
     <>
-      <Header/>
-      <StudentCard studentdata={studentdata} />
+      <Header />
+      <button onClick={()=>setShow(!show) } style={{width:"100px"}}    >Show/Hide</button>
+      {show && <StudentCard studentdata={studentdata} />}
      <Footer/>
     </>
   )

@@ -17,11 +17,13 @@ function App() {
     age: 20,
     course: "CSE",
     grade: "B"
-  }]
+    }]
+  let a=10
 
   return (
     <>
-      <StudentCard studentdata={studentdata}  />
+      <StudentCard data={studentdata} a={a} />
+      
     </>
     
   )

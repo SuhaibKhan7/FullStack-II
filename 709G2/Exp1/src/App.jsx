@@ -1,7 +1,9 @@
 import React from 'react'
-// import StudentCard from './StudentCard.jsx'
+import StudentCard from './StudentCard'
 
 function App() {
+
+
   const studentdata = [{
     name: "John Doe",
     age: 20,
@@ -21,14 +23,13 @@ function App() {
     grade: "A"
   }]
 
-  return
-  (
-    <>
-      <h1>Student Details</h1>
-      <StudentCard studentdata={studentdata} />
-    </>
-  )
 
+
+  return (
+    <div>
+    <StudentCard studentdata={studentdata}/>
+    </div>
+  )
 }
 
 export default App

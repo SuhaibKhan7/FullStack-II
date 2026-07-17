@@ -9,8 +9,8 @@ function StudentCard({ studentdata }) {
             <h1>SuhaibKhan7 -Github</h1> 
             <hr />
             <hr/>
-            {studentdata.map((std) => (
-                <div>
+            {studentdata.map((std,index) => (
+                <div key={index}>
                     <p>{std.name}</p>
                     <p>{std.age}</p>
                     <p>{std.grade}</p>

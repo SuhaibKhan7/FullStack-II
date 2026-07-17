@@ -31,11 +31,11 @@ function App() {
  
   const [show, setShow] = useState(true)
   
-  function toggleCard() {
+  function toggleCard(x) {
+    console.log(x)
    setShow(!show)
    
-}
-
+} 
   return (
     <div>
       <Header />

@@ -36,6 +36,7 @@ function App() {
   function handleSearch(e) {
     e.preventDefault()
     setName(e.target.value)
+    console.log(name)
   }
 
   return (

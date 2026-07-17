@@ -1,10 +1,12 @@
 import React from 'react'
 
+
 function StudentCard({ studentdata }) {
     console.log(studentdata)
     return (
         <div>
             <h1>Student Details</h1>
+            <h1>SuhaibKhan7 -Github</h1> 
             <hr />
             <hr/>
             {studentdata.map((std) => (

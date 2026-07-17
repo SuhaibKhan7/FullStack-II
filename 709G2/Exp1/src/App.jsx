@@ -1,5 +1,8 @@
 import React from 'react'
+import { useState } from 'react'
 import StudentCard from './StudentCard'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -22,12 +25,23 @@ function App() {
     course: "Physics",
     grade: "A"
   }]
-
-
+ 
+ 
+ 
+ 
+  const [show, setShow] = useState(true)
+  
+  function toggleCard() {
+   setShow(!show)
+   
+}
 
   return (
     <div>
-    <StudentCard studentdata={studentdata}/>
+      <Header />
+      <button onClick={toggleCard}>Show/Hide</button>
+      {show && <StudentCard studentdata={studentdata} />}
+      <Footer/>
     </div>
   )
 }

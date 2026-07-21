@@ -1,21 +1,35 @@
 import { useState, useEffect } from "react"
 function App() {
   const [users, setUsers] = useState([])
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+
   useEffect(() => {
     async function fetchUsers() {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users")
-      console.log(response)
-      const data = await response.json()
-      setUsers(data);
-      console.log(data)
-
-
-    }
+      try {
+        setLoading(true);
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setUsers(data);
+        setLoading(false);
+      } catch (error) {
+        setError(true);
+        setMessage(error.message);
+        setLoading(false);
+      }  
+    } 
     fetchUsers();
-
   }, [])
   return (
     <>
+      {error && <h4>{message}</h4>}
+      {loading && <h4>Loading...</h4>}
+
       {users.map((user, index) => (
         <div key={index}>
           <h3>{user.name}</h3>
